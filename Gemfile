@@ -26,7 +26,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
-gem 'active_model_serializers', '~> 0.10.0' 
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -35,6 +35,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'simplecov', require: false, group: :test
   gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 group :development do
