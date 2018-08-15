@@ -11,7 +11,7 @@ class Merchant < ApplicationRecord
     revenue:
       (invoices
       .joins(:transactions, :invoice_items)
-      .where(transactions: {result: 'success'})
+      .merge(Transaction.success)
       .sum('invoice_items.quantity * invoice_items.unit_price')
       .to_f / 100.round(2)).to_json
     }
