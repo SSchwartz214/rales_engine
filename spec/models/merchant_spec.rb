@@ -19,7 +19,7 @@ describe Merchant do
       transaction_2 = invoice_1.transactions.create(credit_card_number: "234432237", result: "success")
       transaction_3 = invoice_2.transactions.create(credit_card_number: "234432237", result: "success")
 
-      expect(merchant.revenue).to eq({revenue: "10.0"})
+      expect(merchant.total_revenue).to eq(1000)
     end
   end
 end
