@@ -1,8 +1,7 @@
 class Api::V1::MerchantsRevenueController < ApplicationController
 
-  def revenue
-    @merchant = Merchant.find(params[:id])
-    render json: @merchant.revenue
+  def show
+    render json: Merchant.find(params[:id]), serializer: MerchantRevenueSerializer
   end
 
 end
