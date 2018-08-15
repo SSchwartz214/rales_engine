@@ -3,7 +3,6 @@ class Merchant < ApplicationRecord
 
   has_many :items
   has_many :invoices
-  has_many :invoice_items, through: :invoices
   has_many :customers, through: :invoices
 
   def total_revenue
@@ -12,4 +11,5 @@ class Merchant < ApplicationRecord
       .merge(Transaction.success)
       .sum('invoice_items.quantity * invoice_items.unit_price')
   end
+
 end
