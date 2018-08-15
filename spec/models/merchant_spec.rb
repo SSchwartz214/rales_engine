@@ -6,9 +6,9 @@ describe Merchant do
   end
   describe 'instance methods' do
     it "returns the total revenue" do
-      merchant = Merchant.create(name: "Stupid")
-      customer_1 = Customer.create(first_name: "Blah", last_name: "Blargh")
-      customer_2 = Customer.create(first_name: "Second", last_name: "place")
+      merchant = create(:merchant)
+      customer_1 = create(:customer)
+      customer_2 = create(:customer)
       item_1 = merchant.items.create(name: "Knife", description: "EWfewfewf", unit_price: 423)
       item_2 = merchant.items.create(name: "Flamethrower", description: "werfwrerw", unit_price: 577)
       invoice_1 = merchant.invoices.create(customer_id: customer_1.id, status: "shipped")
@@ -19,9 +19,7 @@ describe Merchant do
       transaction_2 = invoice_1.transactions.create(credit_card_number: "234432237", result: "success")
       transaction_3 = invoice_2.transactions.create(credit_card_number: "234432237", result: "success")
 
-      expect(merchant.revenue).to eq(10.00)
-
-
+      expect(merchant.revenue).to eq({revenue: 10.00})
     end
   end
 end
