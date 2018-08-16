@@ -36,6 +36,7 @@ group :development, :test do
   gem 'simplecov', require: false, group: :test
   gem 'shoulda-matchers'
   gem 'pry'
+  gem 'faker'
 end
 
 group :development do
