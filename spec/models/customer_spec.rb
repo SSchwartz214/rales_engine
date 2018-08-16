@@ -5,6 +5,11 @@ describe Customer do
     it {should validate_presence_of :first_name}
     it {should validate_presence_of :last_name}
   end
+  describe 'relationships' do
+    it {should have_many :invoices}
+    it {should have_many(:transactions).through :invoices}
+    it {should have_many(:merchants).through :invoices}
+  end
 
   describe 'class methods' do
     it 'returns the favorite customer of a merchant' do
