@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         get 'revenue', to: 'merchants_revenue#index'
         get ':id/revenue', to: 'merchants_revenue#show'
         get ':id/favorite_customer', to: 'merchants_customers#favorite'
+        get 'most_items', to: 'merchants_most_items#index'
       end
 
       namespace :items do
@@ -15,7 +16,6 @@ Rails.application.routes.draw do
       resources :transactions, only: [:index, :show]
       resources :invoices, only: [:index]
       resources :customers, only: [:index, :show]
-
     end
   end
 end
