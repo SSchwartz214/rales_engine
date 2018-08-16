@@ -1,4 +1,4 @@
-class Api::V1::MerchantsRevenueController < ApplicationController
+class Api::V1::Merchants::MerchantsRevenueController < ApplicationController
 
   def show
     if params['date']
@@ -9,6 +9,6 @@ class Api::V1::MerchantsRevenueController < ApplicationController
   end
 
   def index
-    render json: Merchant.total_revenue_by_date(params['date'])
+    render json: Merchant.total_revenue_by_date(params['date']), serializer: MerchantRevenueSerializer
   end
 end
