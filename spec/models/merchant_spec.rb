@@ -21,5 +21,18 @@ describe Merchant do
 
       expect(merchant.total_revenue).to eq(1000)
     end
+
+    it "returns the total revenue by date" do
+      date = "2012-03-25 13:54:11"
+      merchant = create(:merchant)
+      invoice_1 = create(:invoice, created_at: date, merchant_id: merchant.id)
+      invoice_2 = create(:invoice, created_at: date, merchant_id: merchant.id)
+      transaction_1 = invoice_1.transactions.create(invoice_id: invoice_1.id, result: "success")
+      transaction_2 = invoice_2.transactions.create(invoice_id: invoice_2.id, result: "success")
+      invoice_item_1 = invoice_1.invoice_items.create(invoice_id: invoice_1.id, unit_price: 1000, quantity: 2)
+      invoice_item_2 = invoice_1.invoice_items.create(invoice_id: invoice_2.id, unit_price: 500, quantity: 2)
+
+      expect(merchant.total_revenue_by_date(date)).to eq(3000)
+    end
   end
 end
