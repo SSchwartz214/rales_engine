@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       resources :transactions, only: [:index, :show]
       resources :invoices, only: [:index]
       resources :customers, only: [:index, :show]
-
     end
   end
 end
