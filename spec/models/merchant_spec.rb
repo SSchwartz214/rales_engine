@@ -31,14 +31,16 @@ describe Merchant do
     end
 
     xit "returns the total revenue by date" do
-      date = "2012-03-25 13:54:11"
+      date = "2012-10-31"
       merchant = create(:merchant)
-      invoice_1 = create(:invoice, created_at: date, merchant_id: merchant.id)
-      invoice_2 = create(:invoice, created_at: date, merchant_id: merchant.id)
-      transaction_1 = invoice_1.transactions.create(invoice_id: invoice_1.id, result: "success")
-      transaction_2 = invoice_2.transactions.create(invoice_id: invoice_2.id, result: "success")
-      invoice_item_1 = invoice_1.invoice_items.create(invoice_id: invoice_1.id, unit_price: 1000, quantity: 2)
-      invoice_item_2 = invoice_2.invoice_items.create(invoice_id: invoice_2.id, unit_price: 500, quantity: 2)
+      item = create(:item)
+      customer = create(:customer)
+      invoice_1 = merchant.invoices.create(customer_id: customer.id, status: "shipped", updated_at: Date.parse(date))
+      invoice_2 = merchant.invoices.create(customer_id: customer.id, status: "shipped")
+      Transaction.create(credit_card_number: '1234', credit_card_expiration_date: '10/11/12', result: "success", invoice_id: invoice_1.id)
+      Transaction.create(credit_card_number: '1234', credit_card_expiration_date: '10/11/12', result: "success", invoice_id: invoice_2.id)
+      invoice_item1 = InvoiceItem.create(item_id: item.id, invoice_id: invoice_1.id, quantity: 1, unit_price: 1000)
+      invoice_item2 = InvoiceItem.create(item_id: item.id, invoice_id: invoice_2.id, quantity: 2, unit_price: 1000)
 
       expect(merchant.total_revenue_by_date(date)).to eq(3000)
     end
