@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'merchants/:id/favorite_customer', to: 'merchants_customers#favorite'
 
       resources :transactions, only: [:index, :show]
+
+      resources :customers, only: [:index, :show]
     end
   end
 end
