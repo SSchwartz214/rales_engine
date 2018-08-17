@@ -8,17 +8,48 @@ Rails.application.routes.draw do
         get ':id/favorite_customer', to: 'merchants_customers#favorite'
         get ':id/customers_with_pending_invoices', to: 'merchant_pending_invoices#index'
         get 'most_items', to: 'merchants_most_items#index'
-
+        get 'find', to: 'search#show'
+        get 'find_all', to: 'search#index'
+        get 'random', to: 'random#show'
+        get ':id/items', to: 'items#index'
+        get ':id/invoices', to: 'invoices#index'
       end
 
       namespace :items do
         get 'most_revenue', to: 'items_revenue#most_revenue'
         get ":id/best_day", to: 'best_day#show'
         get "most_items", to: "most_items#index"
+        get ":id/invoice_items", to: "invoice_items#index"
+        get ":id/merchant", to: "merchant#show"
       end
 
       namespace :customers do
         get ':id/favorite_merchant', to: 'favorite_merchant#show'
+        get 'find', to: 'search#show'
+        get 'find_all', to: 'search#index'
+        get 'random', to: 'random#show'
+        get ':id/invoices', to: 'invoices#index'
+        get ':id/transactions', to: 'transactions#index'
+      end
+
+      namespace :transactions do
+        get 'find', to: 'search#show'
+        get 'find_all', to: 'search#index'
+        get 'random', to: 'random#show'
+        get ':id/invoice', to: 'invoice#show'
+      end
+
+      namespace :invoices do
+        get ':id/transactions', to: 'transactions#index'
+        get ':id/invoice_items', to: 'invoice_items#index'
+        get ':id/items', to: 'items#index'
+        get ':id/customer', to: 'customer#show'
+        get ':id/merchant', to: 'merchant#show'
+      end
+
+      namespace :invoice_items do
+        get ':id/invoice', to: 'invoice#show'
+        get ':id/item', to: 'item#show'
       end
 
       resources :merchants, only: [:index, :show]
