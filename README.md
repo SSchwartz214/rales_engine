@@ -50,7 +50,7 @@ You can visit these endpoints to see a JSON response.
 In your terminal, start a local server: rails s
 
 Open your browser to localhost:3000
-
+```
 ** Record Endpoints
 
 * Merchants
@@ -127,7 +127,6 @@ GET /api/v1/items/:id/best_day returns the date with the most sales for the give
 
 * Customers
 GET /api/v1/customers/:id/favorite_merchant returns a merchant where the customer has conducted the most successful transactions
-```
 
 #### Questions or comments?
 
