@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### RalesEngine
 
-Things you may want to cover:
+#### Description
 
-* Ruby version
+Rales Engine uses Rails and ActiveRecord to build a JSON API which exposes the SalesEngine data schema.
 
-* System dependencies
 
-* Configuration
+#### Rails version: 5.1.6
 
-* Database creation
+### Configuration
 
-* Database initialization
+* Clone the repository:
+```
+git clone https://github.com/SSchwartz214/rales_engine.git
+```
+
+* To install gems:
+```
+$ bundle install
+$ bundle update
+```
+
+* To create and seed database:
+```
+$ rake db:{create,migrate,seed}
+```
 
 * How to run the test suite
+```
+$ rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Questions or comments?
 
-* Deployment instructions
+Please contact us at:
 
-* ...
+* Seth: https://github.com/SSchwartz214
+* Connor: https://github.com/letsdothis64
+
