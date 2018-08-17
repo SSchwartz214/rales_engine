@@ -16,6 +16,15 @@ Rales Engine uses Rails and ActiveRecord to build a JSON API which exposes the S
 git clone https://github.com/SSchwartz214/rales_engine.git
 ```
 
+* Navigate to the repository:
+```
+cd rales_engine
+```
+
+* Open text editor:
+```
+ie: If you are using Atom, type: Atom .
+
 * To install gems:
 ```
 $ bundle install
