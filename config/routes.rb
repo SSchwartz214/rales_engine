@@ -10,7 +10,7 @@ Rails.application.routes.draw do
         get 'most_items', to: 'merchants_most_items#index'
         get 'find', to: 'search#show'
         get 'find_all', to: 'search#index'
-
+        get 'random', to: 'random#show'
       end
 
       namespace :items do
@@ -21,6 +21,15 @@ Rails.application.routes.draw do
 
       namespace :customers do
         get ':id/favorite_merchant', to: 'favorite_merchant#show'
+        get 'find', to: 'search#show'
+        get 'find_all', to: 'search#index'
+        get 'random', to: 'random#show'
+      end
+
+      namespace :transactions do
+        get 'find', to: 'search#show'
+        get 'find_all', to: 'search#index'
+        get 'random', to: 'random#show'
       end
 
       resources :merchants, only: [:index, :show]
