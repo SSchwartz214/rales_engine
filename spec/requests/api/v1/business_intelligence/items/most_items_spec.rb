@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Items API' do
-  it 'loads a variable number of top items ranked by total number sold' do
+  xit 'loads a variable number of top items ranked by total number sold' do
     item_1 = create(:item)
     item_2 = create(:item)
 
