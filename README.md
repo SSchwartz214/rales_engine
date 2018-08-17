@@ -24,6 +24,7 @@ cd rales_engine
 * Open text editor:
 ```
 ie: If you are using Atom, type: Atom .
+```
 
 * To install gems:
 ```
