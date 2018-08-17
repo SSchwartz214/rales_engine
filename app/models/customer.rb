@@ -7,4 +7,13 @@ class Customer < ApplicationRecord
   def self.favorite_customer(merchant_id)
     Customer.joins(:transactions).where("transactions.result='success'").where("invoices.merchant_id=?", merchant_id).group(:id).order('count(*) desc').limit(1).first.id
   end
+
+  def self.pending_invoices
+    ActiveRecord::Base.connection.execute(
+      '
+        INNER JOIN transactions ON transactions.invoice_id
+        SELECT * FROM customers
+      '
+    )
+  end
 end
