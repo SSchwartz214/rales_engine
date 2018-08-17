@@ -30,7 +30,7 @@ class Merchant < ApplicationRecord
     .where(invoices: {created_at: new_date.beginning_of_day..new_date.end_of_day})
     .joins(:transactions)
     .where("transactions.result='success'")
-    # .sum('invoice_items.unit_price * invoice_items.quantity')
+    .sum('invoice_items.unit_price * invoice_items.quantity')
   end
 
   def self.most_items(quantity)
