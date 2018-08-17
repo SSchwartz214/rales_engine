@@ -52,7 +52,7 @@ In your terminal, start a local server: rails s
 Open your browser to localhost:3000
 ```
 
-### Record Endpoints
+### Record Endpoints:
 
 #### Merchants
 * GET /api/v1/merchants
@@ -84,7 +84,7 @@ Open your browser to localhost:3000
 * GET /api/v1/transactions/:id
 * GET /api/v1/transactions/random
 
-### Relationship Endpoints
+### Relationship Endpoints:
 
 #### Merchants
 * GET /api/v1/merchants/:id/items returns a collection of items associated with that merchant
@@ -112,7 +112,7 @@ Open your browser to localhost:3000
 * GET /api/v1/customers/:id/invoices returns a collection of associated invoices
 * GET /api/v1/customers/:id/transactions returns a collection of associated transactions
 
-### Business Intelligence Endpoints
+### Business Intelligence Endpoints:
 
 #### Merchants
 * GET /api/v1/merchants/most_revenue?quantity=x returns the top x merchants ranked by total revenue
@@ -130,7 +130,7 @@ Open your browser to localhost:3000
 #### Customers
 * GET /api/v1/customers/:id/favorite_merchant returns a merchant where the customer has conducted the most successful transactions
 
-#### Questions or comments?
+## Questions or comments?
 
 Please contact us at:
 
