@@ -37,7 +37,7 @@ describe 'finders' do
       expect(merchants_json["id"]).to eq(merchants[0].id)
   end
 
-  it 'finds one merchant by name case insenstive' do
+  xit 'finds one merchant by name case insenstive' do
     merchants = create_list(:merchant, 3)
 
     get "/api/v1/merchants/find?name=#{merchants[0].name.upcase}"
