@@ -22,4 +22,13 @@ class Customer < ApplicationRecord
     .group(:id)
     .order('total_invoices desc')[0]
   end
+
+  def self.pending_invoices
+    ActiveRecord::Base.connection.execute(
+      '
+        INNER JOIN transactions ON transactions.invoice_id
+        SELECT * FROM customers
+      '
+    )
+  end
 end
