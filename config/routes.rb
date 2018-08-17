@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get ':id/favorite_customer', to: 'merchants_customers#favorite'
         get ':id/customers_with_pending_invoices', to: 'merchant_pending_invoices#index'
         get 'most_items', to: 'merchants_most_items#index'
+        get 'most_revenue', to: 'most_revenue#index'
         get 'find', to: 'search#show'
         get 'find_all', to: 'search#index'
         get 'random', to: 'random#show'
