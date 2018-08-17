@@ -11,6 +11,9 @@ class Api::V1::Items::SearchController < ApplicationController
   private
 
   def item_params
+    if params["unit_price"]
+        params["unit_price"] = params["unit_price"].remove('.')
+    end
     params.permit( :id,
                    :name,
                    :description,
