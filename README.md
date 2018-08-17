@@ -43,7 +43,7 @@ $ rake import:all
 $ rspec
 ```
 
-* Endpoints
+* Endpoints:
 ```
 You can visit these endpoints to see a JSON response.
 
@@ -51,7 +51,7 @@ In your terminal, start a local server: rails s
 
 Open your browser to localhost:3000
 ```
-# Record Endpoints
+* Record Endpoints
 
 * Merchants
 GET /api/v1/merchants
@@ -83,7 +83,7 @@ GET /api/v1/transactions
 GET /api/v1/transactions/:id
 GET /api/v1/transactions/random
 
-# Relationship Endpoints
+* Relationship Endpoints
 
 Merchants
 GET /api/v1/merchants/:id/items returns a collection of items associated with that merchant
@@ -111,7 +111,7 @@ GET /api/v1/transactions/:id/invoice returns the associated invoice
 GET /api/v1/customers/:id/invoices returns a collection of associated invoices
 GET /api/v1/customers/:id/transactions returns a collection of associated transactions
 
-# Business Intelligence Endpoints
+* Business Intelligence Endpoints
 
 * Merchants
 GET /api/v1/merchants/most_revenue?quantity=x returns the top x merchants ranked by total revenue
@@ -135,4 +135,3 @@ Please contact us at:
 
 * Seth: https://github.com/SSchwartz214
 * Connor: https://github.com/letsdothis64
-
