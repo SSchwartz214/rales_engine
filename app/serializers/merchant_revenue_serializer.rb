@@ -4,5 +4,4 @@ class MerchantRevenueSerializer < ActiveModel::Serializer
   def revenue
     ((object.to_f) / 100.round(2)).to_json
   end
-
 end
